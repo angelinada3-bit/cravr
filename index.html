@@ -29,6 +29,24 @@
 .profile-hero .profile-mascot{font-size:0}
 .profile-hero .profile-mascot .cravr-mascot-art{width:100%;height:100%}
 @keyframes cravrHello{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-6px) rotate(2deg)}}
+/* CRAVR tactile food-toy polish */
+.category-art.mascot-category{width:66px;height:66px;display:grid;place-items:center;background:transparent!important;border-radius:0;box-shadow:none;transform-style:preserve-3d;overflow:visible}
+.category-art.mascot-category svg{width:68px;height:68px;overflow:visible;filter:drop-shadow(0 7px 3px #6b442b30);animation:foodBob 3.4s ease-in-out infinite}
+.category-tile:active .category-art svg{transform:translateY(3px) scale(.94)}
+@keyframes foodBob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-4px) rotate(2deg)}}
+.gesture-stamp{position:absolute;z-index:12;top:24px;padding:11px 16px;border:3px solid;border-radius:15px;font-weight:1000;font-size:22px;letter-spacing:1.3px;opacity:0;pointer-events:none;transition:opacity .09s ease,transform .09s ease;box-shadow:0 5px 0 #00000010}
+.gesture-nope{left:18px;color:#d94135;border-color:#d94135;background:#fff4ee;transform:rotate(-12deg) scale(.8)}
+.gesture-yep{right:18px;color:#258346;border-color:#258346;background:#f0ffe8;transform:rotate(12deg) scale(.8)}
+.foodcard.show-nope .gesture-nope{opacity:1;transform:rotate(-12deg) scale(1)}
+.foodcard.show-yep .gesture-yep{opacity:1;transform:rotate(12deg) scale(1)}
+.foodcard.show-nope{box-shadow:0 0 0 3px #e85a4a55}.foodcard.show-yep{box-shadow:0 0 0 3px #3b9b5a55}
+.swipe-legend{display:flex;justify-content:space-between;margin:12px 2px 0;font-size:11px;letter-spacing:.7px;color:#876e5c}
+.swipe-legend span:first-child{color:#c64b3e}.swipe-legend span:last-child{color:#33834b}
+.profile-mascot{float:none;width:100%;height:142px;display:flex;align-items:center;justify-content:center;border-radius:0;background:transparent;box-shadow:none;transform:none;animation:none;margin:0 0 8px}
+.profile-mascot svg{width:150px;height:150px;overflow:visible;filter:drop-shadow(0 12px 7px #6b442b28);animation:foodBob 3.2s ease-in-out infinite}
+.profile-hero{position:relative}.profile-mascot-tile .mascot-art-wrap{background:transparent!important;box-shadow:none!important;border-radius:0!important;width:84px;height:80px;display:grid;place-items:center}
+.profile-mascot-tile .mascot-art-wrap svg{width:88px;height:88px;overflow:visible;filter:drop-shadow(0 6px 3px #6b442b28)}
+.profile-mascot-tile{padding-top:10px}.profile-mascot-tile span{border-radius:0!important;background:transparent!important;box-shadow:none!important}
 </style>
 </head>
 <body>
@@ -106,9 +124,9 @@
     {id:"cheeseburger",name:"Classic Cheeseburger",restaurant:"The Burger Club",cat:"Burgers",emoji:"🍔",price:52000,desc:"A classic, juicy cheeseburger with a toasted bun.",area:"Canggu",place:"The Burger Club",color:"#fff0a8",image:"https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1200&q=85"},
     {id:"chickenburger",name:"Crispy Chicken Burger",restaurant:"Crispy Bird",cat:"Burgers",emoji:"🍔",price:48000,desc:"Crunchy chicken, pickles and creamy slaw.",area:"Kuta",place:"Crispy Bird",color:"#fff0a8",image:"https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=1200&q=85"},
     {id:"fries",name:"Loaded Truffle Fries",restaurant:"Golden Hour",cat:"Burgers",emoji:"🍟",price:39000,desc:"Golden fries with parmesan and truffle aroma.",area:"Legian",place:"Golden Hour",color:"#fff0a8",image:"https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=1200&q=85"},
-    {id:"sushi",name:"Salmon Sushi Set",restaurant:"Mori Sushi",cat:"Japanese",emoji:"🍣",price:65000,desc:"Salmon nigiri and maki for a fresh, savory bite.",area:"Seminyak",place:"Mori Sushi",color:"#f7d4c9",image:"https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=1200&q=85"},
-    {id:"ramen",name:"Chicken Ramen",restaurant:"Nori House",cat:"Japanese",emoji:"🍜",price:48000,desc:"Warm broth, springy noodles and tender chicken.",area:"Canggu",place:"Nori House",color:"#f0dfad",image:"https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=1200&q=85"},
-    {id:"gyoza",name:"Pan-fried Gyoza",restaurant:"Little Tokyo",cat:"Japanese",emoji:"🥟",price:42000,desc:"Crispy-bottom dumplings with dipping sauce.",area:"Kuta",place:"Little Tokyo",color:"#f7d4c9",image:"https://images.unsplash.com/photo-1563245674-0c7a4b4b1f1a?auto=format&fit=crop&w=1200&q=85"},
+    {id:"sushi",name:"Salmon Sushi Set",restaurant:"Mori Sushi",cat:"Asian",emoji:"🍣",price:65000,desc:"Salmon nigiri and maki for a fresh, savory bite.",area:"Seminyak",place:"Mori Sushi",color:"#f7d4c9",image:"https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=1200&q=85"},
+    {id:"ramen",name:"Chicken Ramen",restaurant:"Nori House",cat:"Asian",emoji:"🍜",price:48000,desc:"Warm broth, springy noodles and tender chicken.",area:"Canggu",place:"Nori House",color:"#f0dfad",image:"https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=1200&q=85"},
+    {id:"gyoza",name:"Pan-fried Gyoza",restaurant:"Little Tokyo",cat:"Asian",emoji:"🥟",price:42000,desc:"Crispy-bottom dumplings with dipping sauce.",area:"Kuta",place:"Little Tokyo",color:"#f7d4c9",image:"https://images.unsplash.com/photo-1563245674-0c7a4b4b1f1a?auto=format&fit=crop&w=1200&q=85"},
     {id:"pasta",name:"Creamy Truffle Pasta",restaurant:"Casa Tavola",cat:"Italian",emoji:"🍝",price:72000,desc:"Silky sauce, parmesan and a little black pepper.",area:"Canggu",place:"Casa Tavola",color:"#f2dfbc",image:"https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=1200&q=85"},
     {id:"pizza",name:"Margherita Pizza",restaurant:"Forno Studio",cat:"Italian",emoji:"🍕",price:68000,desc:"Tomato, mozzarella, basil and a blistered crust.",area:"Seminyak",place:"Forno Studio",color:"#f2dfbc",image:"https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=1200&q=85"},
     {id:"gelato",name:"Pistachio Gelato",restaurant:"Dolce Scoop",cat:"Desserts",emoji:"🍨",price:32000,desc:"Creamy pistachio gelato, scooped fresh.",area:"Ubud",place:"Dolce Scoop",color:"#f5d8e1",image:"https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=1200&q=85"},
@@ -117,8 +135,8 @@
     {id:"toast",name:"Avocado Toast",restaurant:"Daily Greens",cat:"Healthy",emoji:"🥑",price:42000,desc:"Fresh avocado, sourdough and bright herbs.",area:"Canggu",place:"Daily Greens",color:"#dce9cf",image:"https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=1200&q=85"},
     {id:"tacos",name:"Crispy Tacos",restaurant:"Taco Loco",cat:"Mexican",emoji:"🌮",price:55000,desc:"Crunchy shells, zesty salsa and fresh toppings.",area:"Uluwatu",place:"Taco Loco",color:"#f5ddb5",image:"https://images.unsplash.com/photo-1551503718-dc2f8c8b0b4f?auto=format&fit=crop&w=1200&q=85"},
     {id:"pancakes",name:"Berry Pancakes",restaurant:"Sunday Brunch Club",cat:"Bakery",emoji:"🥞",price:52000,desc:"Fluffy pancakes with berries and maple syrup.",area:"Jimbaran",place:"Sunday Brunch Club",color:"#f6d7d9",image:"https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=1200&q=85"}
-  ]; const categories=["All","Burgers","Japanese","Italian","Desserts","Healthy","Mexican","Bakery"];
-  const categoryTiles=[["Burgers","burger"],["Japanese","ramen"],["Italian","pizza"],["Desserts","cake"],["Drinks","boba"],["Healthy","avocado"],["Seafood","sushi"],["Bakery","croissant"]];
+  ]; const categories=["All","Burgers","Asian","Italian","Desserts","Healthy","Mexican","Bakery"];
+  const categoryTiles=[["Burgers","burger"],["Asian","ramen"],["Italian","pizza"],["Desserts","cake"],["Drinks","boba"],["Healthy","avocado"],["Seafood","sushi"],["Bakery","croissant"]];
   const stateLocation={city:"",coords:null};
   const state={category:"All",budget:"any",index:0,saved:new Set(),liked:new Set(),tab:"discover",members:3,roomCode:null,city:"",coords:null};
   const $=id=>document.getElementById(id);
@@ -129,8 +147,8 @@
   let toastTimer;
   function toast(msg){$("toast").textContent=msg;$("toast").classList.remove("hidden");clearTimeout(toastTimer);toastTimer=setTimeout(()=>$("toast").classList.add("hidden"),2200)}
   function renderHomeCategories(){
-    $("homeCategories").innerHTML=categoryTiles.map(([name,emoji])=>`<button class="category-tile" data-home-cat="${name}"><span class="category-art">${emoji}</span><span>${name}</span></button>`).join("");
-    $("homeCategories").querySelectorAll("[data-home-cat]").forEach(b=>b.onclick=()=>{const name=b.dataset.homeCat;const map={Asian:"All",Pizza:"Italian",Drinks:"All",Seafood:"All",Bakery:"Desserts"};state.category=categories.includes(name)?name:(map[name]||"All");state.index=0;renderCategories();renderCard();$("cardArea").scrollIntoView({behavior:"smooth",block:"start"});toast(name+" cravings selected")});
+    $("homeCategories").innerHTML=categoryTiles.map(([name,art])=>`<button class="category-tile" data-home-cat="${name}"><span class="category-art mascot-category">${mascotArt(art)}</span><span>${name}</span></button>`).join("");
+    $("homeCategories").querySelectorAll("[data-home-cat]").forEach(b=>b.onclick=()=>{const name=b.dataset.homeCat;state.category=categories.includes(name)?name:"All";state.index=0;renderCategories();renderCard();$("cardArea").scrollIntoView({behavior:"smooth",block:"start"});toast(name+" cravings selected")});
   }
   function setCity(city){
     const value=city.trim();if(!value){toast("Enter a city or country first");return}
@@ -143,9 +161,8 @@
   }
   function surpriseMe(){
     const list=filtered();if(!list.length){toast("Try changing your filters first");return}
-    const current=list[state.index];let choice=list[Math.floor(Math.random()*list.length)];
-    if(list.length>1&&choice.id===current.id)choice=list[(list.indexOf(choice)+1)%list.length];
-    state.index=list.indexOf(choice);renderCard();$("cardArea").scrollIntoView({behavior:"smooth",block:"start"});toast("Your next craving: "+choice.name+" ✨");
+    const current=list[state.index];let choices=list.filter(f=>f.id!==current?.id);if(!choices.length)choices=list;const choice=choices[Math.floor(Math.random()*choices.length)];
+    state.didSurprise=true;state.index=list.indexOf(choice);renderCard();renderProfile();$("cardArea").scrollIntoView({behavior:"smooth",block:"center"});toast("✨ Surprise! "+choice.restaurant+" is your next pick");
   }
   function renderCategories(){
     $("categories").innerHTML=categories.map(c=>`<button class="chip ${state.category===c?"active":""}" data-cat="${c}">${c}</button>`).join("");
@@ -157,8 +174,8 @@
     $("swipeActions").classList.add("hidden");
     const mapQuery=state.coords?(f.restaurant+" "+f.name+" near "+state.coords.lat+","+state.coords.lon):(f.restaurant+" "+f.name+" in "+(state.city||"Bali"));
     const mapUrl="https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(mapQuery);
-    $("cardArea").innerHTML=`<article class="foodcard" id="activeCard"><div class="foodart"><img class="foodphoto" src="${f.image}" alt="${f.name}" loading="eager" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(145deg,#fff0a8,#e9b99b)'"><div class="photo-shade"></div><span class="pill">${f.cat.toUpperCase()}</span><button class="bookmark" id="bookmark" aria-label="Save ${f.name}">${state.saved.has(f.id)?"♥":"♡"}</button><div class="photo-bottom"><div class="photo-kicker">A CRAVR PICK</div><div class="foodname">${f.restaurant}</div><div class="fooddesc">${f.name} · ${f.desc}</div><div class="photo-stats"><span>⌖ ${state.city||"Bali · sample"}</span><span>· ${price(f.price)} est.</span></div></div></div><div class="venue-info"><div class="venue-name">${f.restaurant}</div><div class="venue-area">${f.area} · sample listing, not a verified live venue</div><div class="food-card-actions"><button class="skip-in-card" id="skipInline">× Not today</button><button class="like-in-card" id="likeInline">♥ I'm craving</button><button class="details-in-card" id="detailsBtn">Why this pick? · View details ↗</button></div></div></article><div class="photo-credit">Sample food and venue concept · Check real listings before travelling.</div>`;
-    $("bookmark").onclick=()=>toggleSaved(f);$("skipInline").onclick=skip;$("likeInline").onclick=()=>like(f);$("detailsBtn").onclick=()=>openFoodDetails(f);
+    $("cardArea").innerHTML=`<article class="foodcard" id="activeCard"><div class="gesture-stamp gesture-nope">✕ NOPE</div><div class="gesture-stamp gesture-yep">♥ YES!</div><div class="foodart"><img class="foodphoto" src="${f.image}" alt="${f.name}" loading="eager" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(145deg,#fff0a8,#e9b99b)'"><div class="photo-shade"></div><span class="pill">${f.cat.toUpperCase()}</span><button class="bookmark" id="bookmark" aria-label="Save ${f.name}">${state.saved.has(f.id)?"♥":"♡"}</button><div class="photo-bottom"><div class="photo-kicker">A CRAVR PICK</div><div class="foodname">${f.restaurant}</div><div class="fooddesc">${f.name} · ${f.desc}</div><div class="photo-stats"><span>⌖ ${state.city||"Bali · sample"}</span><span>· ${price(f.price)} est.</span></div></div></div><div class="venue-info"><div class="venue-name">${f.restaurant}</div><div class="venue-area">${f.area} · sample listing, not a verified live venue</div><div class="food-card-actions"><button class="details-in-card" id="detailsBtn">Why this pick? · View details ↗</button><p class="swipe-legend"><span>← <b>DISLIKE</b></span><span><b>LIKE</b> →</span></p></div></div></article><div class="photo-credit">Sample food and venue concept · Check real listings before travelling.</div>`;
+    $("bookmark").onclick=()=>toggleSaved(f);$("detailsBtn").onclick=()=>openFoodDetails(f);
     let startX=0,startY=0,dragging=false;const card=$("activeCard");
     const startDrag=(x,y)=>{startX=x;startY=y;dragging=true;card.classList.add("is-dragging")};
     const moveDrag=(x,y)=>{if(!dragging)return;const dx=x-startX,dy=y-startY;if(Math.abs(dx)<Math.abs(dy)*1.15)return;card.style.transform="translateX("+dx+"px) rotate("+(dx*.035)+"deg)";card.classList.toggle("show-yep",dx>24);card.classList.toggle("show-nope",dx< -24)};
