@@ -46,7 +46,7 @@
     <label class="city-search"><span>⌕</span><input id="cityInput" type="text" placeholder="Search a city or country..." aria-label="Search a city or country"><button id="cityGo" aria-label="Set city">Go</button></label>
     <div class="hero-card">
       <div class="hero-copy"><span class="hero-kicker">YOUR CRAVING, YOUR RULES</span><h1>Hungry?<br>Let's fix that.</h1><p>One tap. One delicious idea.</p></div>
-      <div class="hero-mascot" aria-hidden="true"><div class="mascot-spark spark-one">✦</div><div class="mascot-spark spark-two">✧</div><div class="burger-buddy"><div class="bun-top"><i></i><i></i><i></i><i></i></div><div class="cheese"></div><div class="patty"></div><div class="lettuce"></div><div class="bun-bottom"></div><div class="face"><b></b><b></b><em></em><span></span></div></div><div class="mascot-shadow"></div></div>
+      <div class="hero-mascot" aria-hidden="true"><div class="mascot-spark spark-one">✦</div><div class="mascot-spark spark-two">✧</div><div id="heroMascotArt" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center"></div><div class="mascot-shadow"></div></div>
       <button class="surprise-button" id="surpriseBtn"><span class="surprise-star">✦</span> SURPRISE ME! <span class="surprise-arrow">↗</span></button>
       <div class="hero-footnote"><span>✦</span> A little food adventure starts here</div>
     </div>
@@ -221,6 +221,7 @@
     if(id==="boba") art=`<ellipse cx="55" cy="91" rx="32" ry="6" fill="#6D9BA0" opacity=".18"/><path d="M29 34 L81 34 L76 81 Q55 91 34 81Z" fill="url(#tea)" stroke="#A66B42" stroke-width="2"/><path d="M26 32 Q55 26 84 32 L81 41 Q55 47 29 41Z" fill="#F46D88"/><rect x="52" y="7" width="7" height="30" rx="3.5" fill="#63C8E4" transform="rotate(8 55 22)"/><g fill="#513023"><circle cx="39" cy="71" r="4.5"/><circle cx="53" cy="77" r="4.5"/><circle cx="68" cy="70" r="4.5"/><circle cx="43" cy="82" r="3.5"/><circle cx="64" cy="83" r="3.5"/></g>`+face;
     return `<svg class="cravr-mascot-art" viewBox="0 0 110 100" role="img" aria-label="${id} mascot">${common}<g>${art}</g><ellipse cx="31" cy="22" rx="15" ry="7" fill="url(#shine)" transform="rotate(-30 31 22)"/></svg>`;
   }
+  const heroArt=$("heroMascotArt");if(heroArt)heroArt.innerHTML=mascotArt("burger");
   function renderProfile(){
     const el=$("profileContent");if(!el)return;
     const mascots=[
