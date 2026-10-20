@@ -90,7 +90,9 @@
     {id:"toast",name:"Avocado Toast",cat:"Healthy",emoji:"🥑",price:42000,desc:"Fresh, bright, easy-going.",area:"Canggu",place:"Find brunch nearby",color:"#dce9cf",image:"https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=1200&q=85"},
     {id:"tacos",name:"Crispy Tacos",cat:"Healthy",emoji:"🌮",price:55000,desc:"Crunchy, zesty, full of flavor.",area:"Uluwatu",place:"Find tacos nearby",color:"#f5ddb5",image:"https://images.unsplash.com/photo-1551503718-dc2f8c8b0b4f?auto=format&fit=crop&w=1200&q=85"},
     {id:"pancakes",name:"Berry Pancakes",cat:"Desserts",emoji:"🥞",price:52000,desc:"Fluffy pancakes and berries.",area:"Jimbaran",place:"Find pancakes nearby",color:"#f6d7d9",image:"https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=1200&q=85"}
-  ];  const categories=["All","Burgers","Japanese","Italian","Desserts","Healthy"];\n  const categoryTiles=[["Burgers","🍔"],["Asian","🍜"],["Pizza","🍕"],["Desserts","🍰"],["Drinks","🧋"],["Healthy","🥑"],["Seafood","🍣"],["Bakery","🥐"]];\n  const stateLocation={city:"",coords:null};
+  ];  const categories=["All","Burgers","Japanese","Italian","Desserts","Healthy"];
+  const categoryTiles=[["Burgers","🍔"],["Asian","🍜"],["Pizza","🍕"],["Desserts","🍰"],["Drinks","🧋"],["Healthy","🥑"],["Seafood","🍣"],["Bakery","🥐"]];
+  const stateLocation={city:"",coords:null};
   const state={category:"All",budget:"any",index:0,saved:new Set(),liked:new Set(),tab:"discover",members:3,roomCode:null,city:"",coords:null};
   const $=id=>document.getElementById(id);
   const price=n=>"Rp"+n.toLocaleString("id-ID");
@@ -167,7 +169,8 @@
     $("roomResult").innerHTML=`<div class="panel"><div class="eyebrow">GROUP MATCH · DEMO</div><h2>${matches.length?"Everyone's into it":"Crew picks & alternatives"} ✨</h2><p>${matches.length?"These foods are liked by you and the sample friend profile.":"No shared likes yet, so here are sample crew picks to keep the decision moving."}</p>${ranked.map(f=>`<div class="result"><span class="emoji">${f.emoji}</span><div class="detail"><strong>${f.name}</strong><small>${f.cat} · ${price(f.price)} · sample area ${f.area}</small></div>${matches.some(m=>m.id===f.id)?'<span class="badge">MATCH</span>':''}</div>`).join("")}<p class="note">Friend choices are sample data, not real users.</p></div>`;
   }
   function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
-  renderCategories();renderHomeCategories();renderCard();renderSaved();\n  $("cityGo").onclick=()=>setCity($("cityInput").value);$("cityInput").addEventListener("keydown",e=>{if(e.key==="Enter")setCity($("cityInput").value)});$("locationBtn").onclick=useMyLocation;$("surpriseBtn").onclick=surpriseMe;$("mascotBtn").onclick=()=>toast("Benny says: let’s find something delicious! 🍔");
+  renderCategories();renderHomeCategories();renderCard();renderSaved();
+  $("cityGo").onclick=()=>setCity($("cityInput").value);$("cityInput").addEventListener("keydown",e=>{if(e.key==="Enter")setCity($("cityInput").value)});$("locationBtn").onclick=useMyLocation;$("surpriseBtn").onclick=surpriseMe;$("mascotBtn").onclick=()=>toast("Benny says: let’s find something delicious! 🍔");
 })();
 </script>
 </body>
