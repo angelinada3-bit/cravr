@@ -311,7 +311,7 @@
     el.innerHTML=`<div class="profile-hero"><div class="profile-mascot">${mascotArt(equipped.id)}</div><div class="eyebrow">YOUR CRAVR ID</div><h2>Meet your Crave Crew.</h2><p>Collect food mascots as you explore and save your favorite bites.</p><div class="profile-level">LEVEL 1 · CRAVING BEGINNER</div></div><div class="mascot-showcase"><div class="big-mascot">${mascotArt(equipped.id)}</div><div><div class="eyebrow">YOUR MASCOT</div><h3>${equipped.title}</h3><p>${equipped.desc}</p><span class="equip-tag">${equipped.id==="burger"?"✓ Equipped":equipped.unlocked?"Tap to equip":"🔒 Locked"}</span></div></div><div class="panel"><div class="eyebrow">YOUR FOOD COLLECTION</div><div class="profile-grid">${mascots.map(m=>`<button class="profile-mascot-tile ${m.id===equipped.id?"selected":""}" data-mascot="${m.id}"><div class="mascot-art-wrap">${mascotArt(m.id)}</div><strong>${m.name}</strong><small>${m.id===equipped.id?"✓ Equipped":m.unlocked?"Tap to equip":"🔒 "+m.mission}</small></button>`).join("")}</div></div><div class="panel"><div class="eyebrow">YOUR CRAVINGS</div><h2>${state.saved.size} foods saved</h2><p>Keep your favorite food ideas in one place.</p><button class="primary" id="profileSaved">View saved cravings ↗</button></div>`;
     el.querySelectorAll("[data-mascot]").forEach(b=>b.onclick=()=>{const m=mascots.find(x=>x.id===b.dataset.mascot);if(!m.unlocked){toast("Not unlocked yet — "+m.mission+" ✨");return}state.equippedMascot=m.id;renderProfile();toast(m.name+" is now your mascot! ✨")});
     $("profileSaved").onclick=()=>setTab("saved");
-  }v
+  }
 })();
 </script>
 </body>
