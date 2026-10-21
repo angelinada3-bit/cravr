@@ -184,6 +184,14 @@
 #goGroup .arrow{margin:0!important;justify-self:end!important;font-size:22px!important}
 @media(prefers-reduced-motion:reduce){#homeCategories .category-art svg{animation:none!important}}
 
+
+/* Emergency direct-structure fix: no legacy action labels, keep crew banner clear of fixed nav */
+#swipeActions,.actions,#skipBtn,#likeBtn,.hint,.swipe-legend{display:none!important;visibility:hidden!important;height:0!important;min-height:0!important;margin:0!important;padding:0!important;overflow:hidden!important}
+#cardArea{margin-bottom:18px!important}
+#goGroup{margin:22px 0 118px!important;position:relative!important;z-index:1!important}
+#goGroup .bicon{position:relative!important;flex-shrink:0!important}
+#goGroup .bicon svg{width:54px!important;height:54px!important;object-fit:contain!important}
+
 </style>
 </head>
 <body>
@@ -212,8 +220,8 @@
     <div id="categories" class="chips" aria-label="Food categories"></div>
     <div class="filterrow"><span><i class="budget-icon" aria-hidden="true"></i> Your budget</span><select id="budget" class="select" aria-label="Filter by budget"><option value="any">Any budget</option><option value="under50">Under Rp50k</option><option value="50to80">Rp50–80k</option><option value="over80">Rp80k+</option></select></div>
     <div id="cardArea"></div>
-    <div id="swipeActions" class="actions"><button class="action" id="skipBtn">✕ &nbsp; Not today</button><button class="action like" id="likeBtn">♥ &nbsp; I'm craving</button></div>
-    <div class="hint">Swipe left to skip · swipe right to like</div>
+    <div id="swipeActions" class="actions" style="display:none!important"><button class="action" id="skipBtn">✕ &nbsp; Not today</button><button class="action like" id="likeBtn">♥ &nbsp; I'm craving</button></div>
+    <div class="hint" style="display:none!important">Swipe left to skip · swipe right to like</div>
     <button class="banner" id="goGroup" style="width:100%;text-align:left;border:0">
       <span class="bicon" id="groupBannerMascot" aria-hidden="true"></span><span><strong>Can't decide together?</strong><small>Find the food everyone loves.</small></span><span class="arrow">↗</span>
     </button>
