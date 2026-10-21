@@ -53,6 +53,46 @@
 .category-art.mascot-category svg{display:block!important;width:76px!important;height:76px!important;max-width:100%!important;max-height:100%!important;overflow:visible!important;filter:drop-shadow(0 7px 3px #6b442b25);animation:foodBob 3.4s ease-in-out infinite}
 .category-tile{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:0!important;min-width:0!important}
 .category-tile>span:last-child{position:relative!important;z-index:2!important;display:block!important;line-height:1.2!important;margin-top:2px!important;color:#35251f!important;font-size:13px!important;font-weight:800!important;white-space:nowrap!important}
+
+/* CRAVR polish pass: tactile mascots, quieter surfaces, premium spacing */
+.category-art{background:transparent!important;box-shadow:none!important;border-radius:0!important;overflow:visible!important;width:74px!important;height:68px!important;display:grid!important;place-items:center!important;transform:none!important}
+.category-art:before,.category-art:after{display:none!important;content:none!important}
+.category-art svg{display:block!important;width:82px!important;height:78px!important;overflow:visible!important;filter:drop-shadow(0 9px 5px #51351c22)!important;animation:mascotFloat 3.4s ease-in-out infinite;transform-origin:center bottom}
+.category-tile:nth-child(2) .category-art svg{animation-delay:.18s}.category-tile:nth-child(3) .category-art svg{animation-delay:.36s}.category-tile:nth-child(4) .category-art svg{animation-delay:.54s}.category-tile:nth-child(5) .category-art svg{animation-delay:.72s}
+.category-tile{gap:2px!important;padding:10px 2px 11px!important;border-radius:20px!important;border:1px solid #eadfd2!important;box-shadow:0 7px 18px #50352208!important;background:linear-gradient(180deg,#fff 0%,#fffdf9 100%)!important;min-height:116px}
+.category-tile>span:last-child{margin-top:0!important;font-size:12px!important;letter-spacing:-.15px}
+.home-section-head{margin-top:10px!important;margin-bottom:15px!important}
+.home-section-head .tiny-spark{display:none!important}
+.hero-card{box-shadow:0 18px 42px #9b6b3420!important;border:1px solid #fff1c8}
+.surprise-button{letter-spacing:.7px;min-height:54px}
+.foodcard{border:1px solid #f0e4d8;box-shadow:0 18px 42px #3b241414!important}
+.food-kicker,.photo-kicker{display:none!important}
+.foodname{font-size:clamp(28px,7vw,34px)!important;letter-spacing:-1.15px!important}
+.venue-info{padding-top:18px!important}
+.food-card-actions .details-in-card{letter-spacing:-.1px;box-shadow:0 4px 0 #c53b2c,0 8px 18px #d94f3518!important}
+.swipe-legend{padding:0 4px}
+.banner{border:1px solid #f4df98!important;box-shadow:0 8px 0 #edd27c,0 14px 26px #a57a2410!important;border-radius:23px!important;padding:17px!important}
+.banner .bicon{width:56px;height:56px;display:grid;place-items:center;background:#fff9e9;border-radius:18px;flex-shrink:0}
+.banner .bicon svg{width:50px;height:50px;filter:drop-shadow(0 5px 4px #56331b25)}
+.group-steps .result{border-radius:18px!important;padding:14px!important;box-shadow:0 4px 12px #52332106}
+.group-steps .emoji{width:54px!important;height:54px!important;background:transparent!important;overflow:visible}
+.group-steps .emoji:before{display:none!important}
+.group-steps .emoji svg{width:60px;height:60px;filter:drop-shadow(0 6px 4px #56331b22);animation:mascotFloat 3.5s ease-in-out infinite}
+.tab[data-tab="profile"] span{font-size:0!important;width:28px;height:28px;display:grid;place-items:center}
+.tab[data-tab="profile"] span svg{width:34px;height:34px;overflow:visible;filter:drop-shadow(0 3px 2px #56331b1c)}
+.mascot-avatar{background:transparent!important;box-shadow:none!important;border-radius:0!important;width:58px!important;height:58px!important;overflow:visible!important}
+.mascot-avatar>span{font-size:0!important;width:60px;height:60px;display:grid;place-items:center}
+.mascot-avatar svg{width:65px;height:65px;overflow:visible;filter:drop-shadow(0 6px 4px #56331b24)}
+.mascot-avatar i{display:none!important}
+.profile-mascot-tile .mascot-art-wrap{width:100px!important;height:92px!important}
+.profile-mascot-tile .mascot-art-wrap svg{width:102px!important;height:96px!important;filter:drop-shadow(0 8px 5px #56331b20)!important}
+.profile-mascot-tile{padding:14px 6px 16px!important;background:linear-gradient(180deg,#fffdf9,#fff8eb)!important;box-shadow:0 6px 16px #50352207}
+.profile-mascot-tile:nth-child(2) span,.profile-mascot-tile:nth-child(3) span,.profile-mascot-tile:nth-child(4) span{background:transparent!important}
+.mascot-showcase .big-mascot{background:transparent!important;box-shadow:none!important;border-radius:0!important}
+.mascot-showcase .big-mascot svg{width:120px;height:120px;filter:drop-shadow(0 9px 6px #56331b24)}
+.profile-hero{box-shadow:0 16px 34px #b8793818!important}
+@keyframes mascotFloat{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-5px) rotate(1deg)}}
+@media(prefers-reduced-motion:reduce){.category-art svg,.group-steps .emoji svg,.tab[data-tab="profile"] span svg{animation:none!important}}
 </style>
 </head>
 <body>
@@ -84,7 +124,7 @@
     <div id="swipeActions" class="actions"><button class="action" id="skipBtn">✕ &nbsp; Not today</button><button class="action like" id="likeBtn">♥ &nbsp; I'm craving</button></div>
     <div class="hint">Swipe left to skip · swipe right to like</div>
     <button class="banner" id="goGroup" style="width:100%;text-align:left;border:0">
-      <span class="bicon">👯</span><span><strong>Can't decide together?</strong><small>Find the food everyone loves.</small></span><span class="arrow">↗</span>
+      <span class="bicon" id="groupBannerMascot" aria-hidden="true"></span><span><strong>Can't decide together?</strong><small>Find the food everyone loves.</small></span><span class="arrow">↗</span>
     </button>
   </section>
 
@@ -107,9 +147,9 @@
     <div id="roomResult"></div>
     <div class="panel group-steps">
       <div class="eyebrow">THREE STEPS TO A GROUP CRAVING</div>
-      <div class="result"><span class="emoji">🔗</span><div class="detail"><strong>Share your room</strong><small>Invite your crew with a code.</small></div></div>
-      <div class="result"><span class="emoji">♥️</span><div class="detail"><strong>Swipe individually</strong><small>Everyone picks their cravings.</small></div></div>
-      <div class="result"><span class="emoji">✨</span><div class="detail"><strong>Reveal the matches</strong><small>See shared favorites and alternatives.</small></div></div>
+      <div class="result"><span class="emoji" data-step-mascot="burger"></span><div class="detail"><strong>Share your room</strong><small>Invite your crew with a code.</small></div></div>
+      <div class="result"><span class="emoji" data-step-mascot="sushi"></span><div class="detail"><strong>Swipe individually</strong><small>Everyone picks their cravings.</small></div></div>
+      <div class="result"><span class="emoji" data-step-mascot="avocado"></span><div class="detail"><strong>Reveal the matches</strong><small>See shared favorites and alternatives.</small></div></div>
       <button class="secondary" id="showMatches" style="width:100%;margin-top:12px">Preview group results</button>
     </div>
     <p class="note">Demo note: group codes and friend choices are simulated on this device. Real multi-user rooms need a backend.</p>
@@ -120,7 +160,7 @@
   <button class="tab active" data-tab="discover"><span>✦</span>Discover</button>
   <button class="tab" data-tab="saved"><span>♡</span>Saved</button>
   <button class="tab" data-tab="group"><span>♧</span>Group Match</button>
-  <button class="tab" data-tab="profile"><span>☺</span>Profile</button>
+  <button class="tab" data-tab="profile"><span id="profileTabMascot" aria-hidden="true"></span>Profile</button>
 </div></nav>
 <div id="toast" class="toast hidden" role="status"></div>
 <script>
@@ -180,7 +220,7 @@
     $("swipeActions").classList.add("hidden");
     const mapQuery=state.coords?(f.restaurant+" "+f.name+" near "+state.coords.lat+","+state.coords.lon):(f.restaurant+" "+f.name+" in "+(state.city||"Bali"));
     const mapUrl="https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(mapQuery);
-    $("cardArea").innerHTML=`<article class="foodcard" id="activeCard"><div class="gesture-stamp gesture-nope">✕ NOPE</div><div class="gesture-stamp gesture-yep">♥ YES!</div><div class="foodart"><img class="foodphoto" src="${f.image}" alt="${f.name}" loading="eager" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(145deg,#fff0a8,#e9b99b)'"><div class="photo-shade"></div><span class="pill">${f.cat.toUpperCase()}</span><button class="bookmark" id="bookmark" aria-label="Save ${f.name}">${state.saved.has(f.id)?"♥":"♡"}</button><div class="photo-bottom"><div class="photo-kicker">A CRAVR PICK</div><div class="foodname">${f.restaurant}</div><div class="fooddesc">${f.name} · ${f.desc}</div><div class="photo-stats"><span>⌖ ${state.city||"Bali · sample"}</span><span>· ${price(f.price)} est.</span></div></div></div><div class="venue-info"><div class="venue-name">${f.restaurant}</div><div class="venue-area">${f.area} · sample listing, not a verified live venue</div><div class="food-card-actions"><button class="details-in-card" id="detailsBtn">Why this pick? · View details ↗</button><p class="swipe-legend"><span>← <b>DISLIKE</b></span><span><b>LIKE</b> →</span></p></div></div></article><div class="photo-credit">Sample food and venue concept · Check real listings before travelling.</div>`;
+    $("cardArea").innerHTML=`<article class="foodcard" id="activeCard"><div class="gesture-stamp gesture-nope">✕ NOPE</div><div class="gesture-stamp gesture-yep">♥ YES!</div><div class="foodart"><img class="foodphoto" src="${f.image}" alt="${f.name}" loading="eager" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(145deg,#fff0a8,#e9b99b)'"><div class="photo-shade"></div><span class="pill">${f.cat.toUpperCase()}</span><button class="bookmark" id="bookmark" aria-label="Save ${f.name}">${state.saved.has(f.id)?"♥":"♡"}</button><div class="photo-bottom"><div class="foodname">${f.restaurant}</div><div class="fooddesc">${f.name} · ${f.desc}</div><div class="photo-stats"><span>⌖ ${state.city||"Bali · sample"}</span><span>· ${price(f.price)} est.</span></div></div></div><div class="venue-info"><div class="venue-name">${f.restaurant}</div><div class="venue-area">${f.area} · sample listing, not a verified live venue</div><div class="food-card-actions"><button class="details-in-card" id="detailsBtn">Why this pick? · View details ↗</button><p class="swipe-legend"><span>← <b>DISLIKE</b></span><span><b>LIKE</b> →</span></p></div></div></article><div class="photo-credit">Sample food and venue concept · Check real listings before travelling.</div>`;
     $("bookmark").onclick=()=>toggleSaved(f);$("detailsBtn").onclick=()=>openFoodDetails(f);
     let startX=0,startY=0,dragging=false;const card=$("activeCard");
     const startDrag=(x,y)=>{startX=x;startY=y;dragging=true;card.classList.add("is-dragging")};
@@ -256,6 +296,9 @@
     return `<svg class="cravr-mascot-art" viewBox="0 0 110 100" role="img" aria-label="${id} mascot">${common}<g>${art}</g><ellipse cx="31" cy="22" rx="15" ry="7" fill="url(#shine)" transform="rotate(-30 31 22)"/></svg>`;
   }
   const heroArt=$("heroMascotArt");if(heroArt)heroArt.innerHTML=mascotArt("burger");
+  const profileTabMascot=$("profileTabMascot");if(profileTabMascot)profileTabMascot.innerHTML=mascotArt("burger");
+  const groupBannerMascot=$("groupBannerMascot");if(groupBannerMascot)groupBannerMascot.innerHTML=mascotArt("burger");
+  document.querySelectorAll("[data-step-mascot]").forEach(el=>el.innerHTML=mascotArt(el.dataset.stepMascot));
   function renderProfile(){
     const el=$("profileContent");if(!el)return;
     const mascots=[
