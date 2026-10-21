@@ -93,6 +93,33 @@
 .profile-hero{box-shadow:0 16px 34px #b8793818!important}
 @keyframes mascotFloat{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-5px) rotate(1deg)}}
 @media(prefers-reduced-motion:reduce){.category-art svg,.group-steps .emoji svg,.tab[data-tab="profile"] span svg{animation:none!important}}
+
+/* Refinement: sculpted category art, centered swipe feedback, clean crew banner */
+.category-grid{gap:10px!important}
+.category-tile{min-height:112px!important;padding:9px 3px 12px!important;overflow:hidden!important;background:#fffdf9!important;border-color:#eee3d7!important;box-shadow:0 8px 18px #3823170a,0 1px 2px #38231708!important}
+.category-art{width:82px!important;height:74px!important;background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important;overflow:visible!important}
+.category-art svg{width:88px!important;height:82px!important;background:transparent!important;box-shadow:none!important;filter:drop-shadow(0 8px 4px #37231924) drop-shadow(0 1px 1px #37231910)!important;animation:sculptedFloat 4s ease-in-out infinite!important}
+.category-tile:nth-child(2) .category-art,.category-tile:nth-child(3) .category-art,.category-tile:nth-child(4) .category-art,.category-tile:nth-child(5) .category-art,.category-tile:nth-child(6) .category-art,.category-tile:nth-child(7) .category-art,.category-tile:nth-child(8) .category-art{background:transparent!important}
+.category-tile:nth-child(2) .category-art svg,.category-tile:nth-child(3) .category-art svg,.category-tile:nth-child(4) .category-art svg,.category-tile:nth-child(5) .category-art svg,.category-tile:nth-child(6) .category-art svg,.category-tile:nth-child(7) .category-art svg,.category-tile:nth-child(8) .category-art svg{background:transparent!important}
+.category-art:before,.category-art:after{display:none!important}
+.category-tile>span:last-child{font-size:12px!important;font-weight:850!important;letter-spacing:-.2px!important}
+.gesture-stamp{top:50%!important;left:50%!important;right:auto!important;transform:translate(-50%,-50%) scale(.82)!important;border-radius:18px!important;padding:13px 22px!important;font-size:25px!important;letter-spacing:2px!important;box-shadow:0 8px 0 #00000012,0 18px 30px #00000020!important;backdrop-filter:blur(8px)}
+.gesture-nope{background:#fff7f3f2!important}
+.gesture-yep{background:#f4fff0f2!important}
+.foodcard.show-nope .gesture-nope{transform:translate(-50%,-50%) scale(1) rotate(-3deg)!important}
+.foodcard.show-yep .gesture-yep{transform:translate(-50%,-50%) scale(1) rotate(3deg)!important}
+.swipe-legend{display:none!important}
+#swipeActions{display:none!important}
+.hint{margin:12px 0 20px!important}
+.banner{display:grid!important;grid-template-columns:64px minmax(0,1fr) 20px!important;align-items:center!important;gap:13px!important;min-height:104px!important;padding:18px!important;overflow:hidden!important;background:linear-gradient(115deg,#fff0b2 0%,#ffe9a1 100%)!important;border:1px solid #f1dc98!important;box-shadow:0 5px 0 #e7ce7d,0 12px 26px #6f4b1c0c!important}
+.banner .bicon{width:64px!important;height:64px!important;display:grid!important;place-items:center!important;border-radius:18px!important;background:linear-gradient(145deg,#fffdf4,#fff6d9)!important;box-shadow:inset 0 1px 0 #fff,0 4px 10px #77502110!important;overflow:visible!important}
+.banner .bicon svg{width:64px!important;height:64px!important;filter:drop-shadow(0 6px 4px #4b2c1e25)!important}
+.banner>span:nth-child(2){min-width:0!important;display:block!important}
+.banner strong{font-size:15px!important;line-height:1.25!important;letter-spacing:-.25px!important}
+.banner small{font-size:12px!important;line-height:1.35!important;white-space:normal!important}
+.banner .arrow{font-size:22px!important;align-self:center!important}
+@keyframes sculptedFloat{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-4px) rotate(1deg)}}
+@media(prefers-reduced-motion:reduce){.category-art svg{animation:none!important}}
 </style>
 </head>
 <body>
@@ -220,7 +247,7 @@
     $("swipeActions").classList.add("hidden");
     const mapQuery=state.coords?(f.restaurant+" "+f.name+" near "+state.coords.lat+","+state.coords.lon):(f.restaurant+" "+f.name+" in "+(state.city||"Bali"));
     const mapUrl="https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(mapQuery);
-    $("cardArea").innerHTML=`<article class="foodcard" id="activeCard"><div class="gesture-stamp gesture-nope">✕ NOPE</div><div class="gesture-stamp gesture-yep">♥ YES!</div><div class="foodart"><img class="foodphoto" src="${f.image}" alt="${f.name}" loading="eager" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(145deg,#fff0a8,#e9b99b)'"><div class="photo-shade"></div><span class="pill">${f.cat.toUpperCase()}</span><button class="bookmark" id="bookmark" aria-label="Save ${f.name}">${state.saved.has(f.id)?"♥":"♡"}</button><div class="photo-bottom"><div class="foodname">${f.restaurant}</div><div class="fooddesc">${f.name} · ${f.desc}</div><div class="photo-stats"><span>⌖ ${state.city||"Bali · sample"}</span><span>· ${price(f.price)} est.</span></div></div></div><div class="venue-info"><div class="venue-name">${f.restaurant}</div><div class="venue-area">${f.area} · sample listing, not a verified live venue</div><div class="food-card-actions"><button class="details-in-card" id="detailsBtn">Why this pick? · View details ↗</button><p class="swipe-legend"><span>← <b>DISLIKE</b></span><span><b>LIKE</b> →</span></p></div></div></article><div class="photo-credit">Sample food and venue concept · Check real listings before travelling.</div>`;
+    $("cardArea").innerHTML=`<article class="foodcard" id="activeCard"><div class="gesture-stamp gesture-nope">✕ NOPE</div><div class="gesture-stamp gesture-yep">♥ YES!</div><div class="foodart"><img class="foodphoto" src="${f.image}" alt="${f.name}" loading="eager" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(145deg,#fff0a8,#e9b99b)'"><div class="photo-shade"></div><span class="pill">${f.cat.toUpperCase()}</span><button class="bookmark" id="bookmark" aria-label="Save ${f.name}">${state.saved.has(f.id)?"♥":"♡"}</button><div class="photo-bottom"><div class="foodname">${f.restaurant}</div><div class="fooddesc">${f.name} · ${f.desc}</div><div class="photo-stats"><span>⌖ ${state.city||"Bali · sample"}</span><span>· ${price(f.price)} est.</span></div></div></div><div class="venue-info"><div class="venue-name">${f.restaurant}</div><div class="venue-area">${f.area} · sample listing, not a verified live venue</div><div class="food-card-actions"><button class="details-in-card" id="detailsBtn">Why this pick? · View details ↗</button></div></div></article><div class="photo-credit">Sample food and venue concept · Check real listings before travelling.</div>`;
     $("bookmark").onclick=()=>toggleSaved(f);$("detailsBtn").onclick=()=>openFoodDetails(f);
     let startX=0,startY=0,dragging=false;const card=$("activeCard");
     const startDrag=(x,y)=>{startX=x;startY=y;dragging=true;card.classList.add("is-dragging")};
