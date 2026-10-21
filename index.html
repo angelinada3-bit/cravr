@@ -157,6 +157,33 @@
 @keyframes cravrMascotBob{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-4px) rotate(1deg)}}
 @media(prefers-reduced-motion:reduce){.category-art svg{animation:none!important}}
 
+
+/* CRAVR visual pass v3 */
+#homeCategories .category-tile{position:relative!important;isolation:isolate!important;min-height:126px!important;padding:10px 4px 12px!important;border:1px solid #eadfd2!important;border-radius:22px!important;background:linear-gradient(150deg,#fff 0%,#fffdf8 58%,#fff5e7 100%)!important;box-shadow:0 2px 0 #eadfd2,0 10px 18px #5a39200c!important}
+#homeCategories .category-tile:before{content:""!important;position:absolute!important;inset:1px!important;border-radius:20px!important;background:linear-gradient(145deg,#ffffffa8,transparent 46%)!important;pointer-events:none!important;z-index:-1!important}
+#homeCategories .category-art{width:84px!important;height:76px!important;display:grid!important;place-items:center!important;margin-top:0!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;overflow:visible!important}
+#homeCategories .category-art svg{width:84px!important;height:76px!important;overflow:visible!important;filter:drop-shadow(0 7px 3px #6e46231e) drop-shadow(0 1px 1px #35201620)!important;transform-origin:50% 85%!important}
+#homeCategories .category-tile>span:last-child{position:relative!important;font-size:12px!important;font-weight:900!important;line-height:1.1!important}
+#homeCategories .category-tile:active{transform:translateY(2px) scale(.985)!important}
+#activeCard{isolation:isolate!important}
+#activeCard .gesture-stamp{display:block!important}
+#activeCard .foodart{position:relative!important}
+#activeCard .gesture-stamp.gesture-nope,#activeCard .gesture-stamp.gesture-yep{opacity:0!important}
+#activeCard.show-nope .gesture-stamp.gesture-nope{opacity:1!important}
+#activeCard.show-yep .gesture-stamp.gesture-yep{opacity:1!important}
+#activeCard.swipe-out-left .gesture-stamp.gesture-nope{opacity:1!important}
+#activeCard.swipe-out-right .gesture-stamp.gesture-yep{opacity:1!important}
+#cardArea .food-card-actions{padding:0 8px 5px!important}
+#cardArea .food-card-actions .details-in-card{font-size:14px!important;letter-spacing:-.1px!important}
+.banner#goGroup{display:grid!important;grid-template-columns:60px minmax(0,1fr) 18px!important;align-items:center!important;gap:13px!important;width:100%!important;min-height:100px!important;padding:16px!important;border-radius:22px!important;background:linear-gradient(115deg,#fff1b8,#ffe8a0)!important;border:1px solid #f1dc98!important;box-shadow:0 5px 0 #e7ce7d,0 12px 24px #6f4b1c0d!important}
+#goGroup .bicon{width:60px!important;height:60px!important;display:grid!important;place-items:center!important;border-radius:18px!important;background:linear-gradient(145deg,#fffefa,#fff5d9)!important;box-shadow:0 4px 9px #77502112!important;overflow:hidden!important}
+#goGroup .bicon svg{width:60px!important;height:60px!important;display:block!important;filter:drop-shadow(0 5px 4px #4b2c1e20)!important}
+#goGroup>span:nth-child(2){min-width:0!important}
+#goGroup strong{font-size:15px!important;line-height:1.25!important;letter-spacing:-.2px!important}
+#goGroup small{font-size:12px!important;line-height:1.35!important;white-space:normal!important}
+#goGroup .arrow{margin:0!important;justify-self:end!important;font-size:22px!important}
+@media(prefers-reduced-motion:reduce){#homeCategories .category-art svg{animation:none!important}}
+
 </style>
 </head>
 <body>
