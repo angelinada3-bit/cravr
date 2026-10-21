@@ -120,6 +120,43 @@
 .banner .arrow{font-size:22px!important;align-self:center!important}
 @keyframes sculptedFloat{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-4px) rotate(1deg)}}
 @media(prefers-reduced-motion:reduce){.category-art svg{animation:none!important}}
+
+/* CRAVR UI refresh v2 — explicit final overrides */
+#swipeActions,.actions,.swipe-legend,.swipe-controls,.swipe-buttons{display:none!important}
+#cardArea .food-card-actions .skip-in-card,
+#cardArea .food-card-actions .like-in-card{display:none!important}
+#cardArea .food-card-actions{display:block!important;margin-top:14px!important}
+#cardArea .food-card-actions .details-in-card{display:flex!important;align-items:center!important;justify-content:center!important;width:100%!important;min-height:54px!important;border-radius:16px!important;background:linear-gradient(180deg,#f64f3e,#e83f31)!important;box-shadow:0 5px 0 #c93629,0 10px 18px #e84a351c!important}
+#activeCard{position:relative!important;overflow:hidden!important}
+#activeCard .gesture-stamp{position:absolute!important;top:50%!important;left:50%!important;right:auto!important;z-index:20!important;opacity:0!important;pointer-events:none!important;padding:14px 23px!important;border:3px solid currentColor!important;border-radius:17px!important;font-size:clamp(23px,6vw,32px)!important;font-weight:1000!important;letter-spacing:2px!important;box-shadow:0 8px 0 #00000012,0 18px 34px #00000025!important;backdrop-filter:blur(8px)!important;transform:translate(-50%,-50%) scale(.75) rotate(-5deg)!important;transition:opacity .12s ease,transform .12s ease!important}
+#activeCard .gesture-stamp.gesture-nope{color:#c94135!important;background:#fff8f3f5!important}
+#activeCard .gesture-stamp.gesture-yep{color:#287c43!important;background:#f3fff0f5!important}
+#activeCard.show-nope .gesture-stamp.gesture-nope,
+#activeCard.swipe-out-left .gesture-stamp.gesture-nope{opacity:1!important;transform:translate(-50%,-50%) scale(1) rotate(-5deg)!important}
+#activeCard.show-yep .gesture-stamp.gesture-yep,
+#activeCard.swipe-out-right .gesture-stamp.gesture-yep{opacity:1!important;transform:translate(-50%,-50%) scale(1) rotate(5deg)!important}
+.banner{display:grid!important;grid-template-columns:58px minmax(0,1fr) 18px!important;gap:12px!important;align-items:center!important;min-height:96px!important;padding:15px!important;border-radius:22px!important;overflow:hidden!important}
+.banner .bicon{width:58px!important;height:58px!important;display:grid!important;place-items:center!important;overflow:hidden!important;border-radius:17px!important}
+.banner .bicon svg{width:58px!important;height:58px!important;display:block!important}
+.banner>span:nth-child(2){min-width:0!important}
+.banner strong{display:block!important;font-size:15px!important;line-height:1.25!important}
+.banner small{display:block!important;font-size:12px!important;line-height:1.35!important}
+.banner .arrow{margin:0!important;justify-self:end!important}
+.category-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:10px!important}
+.category-tile{min-height:112px!important;justify-content:center!important;padding:8px 3px 11px!important;border-radius:19px!important;background:linear-gradient(155deg,#fffefa,#fff)!important;box-shadow:0 8px 18px #3823170d,0 2px 0 #eadfd2!important}
+.category-art{width:76px!important;height:70px!important;display:grid!important;place-items:center!important;overflow:visible!important;background:transparent!important;box-shadow:none!important}
+.category-art svg{width:78px!important;height:72px!important;display:block!important;overflow:visible!important;filter:drop-shadow(0 8px 5px #37231925)!important;animation:cravrMascotBob 3.5s ease-in-out infinite!important}
+.category-tile:nth-child(2) .category-art svg{animation-delay:.15s!important}
+.category-tile:nth-child(3) .category-art svg{animation-delay:.3s!important}
+.category-tile:nth-child(4) .category-art svg{animation-delay:.45s!important}
+.category-tile:nth-child(5) .category-art svg{animation-delay:.6s!important}
+.category-tile:nth-child(6) .category-art svg{animation-delay:.75s!important}
+.category-tile:nth-child(7) .category-art svg{animation-delay:.9s!important}
+.category-tile:nth-child(8) .category-art svg{animation-delay:1.05s!important}
+.category-art:before,.category-art:after{display:none!important}
+@keyframes cravrMascotBob{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-4px) rotate(1deg)}}
+@media(prefers-reduced-motion:reduce){.category-art svg{animation:none!important}}
+
 </style>
 </head>
 <body>
